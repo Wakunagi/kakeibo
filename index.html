@@ -5,25 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./scripts/GetData.js"></script>
-    </style>
+    <script src="./scripts/PostData.js"></script>
+    <link rel="stylesheet" href="./style/UIStyle.css">
 </head>
 
 <body>
-    <div id="output"></div>
+
+    <div id="PopUpWindow" class="PopUpWindow hide">
+
+
+        <div id="PostData" class="PostData">
+
+            <div style="display: flex; justify-content: flex-end;">
+                <button onclick="HidePopUp()">×</button>
+            </div>
+
+            <div class="postRowContent">
+                <div style="width:70%;">
+                    <div class="postRowContent">
+                        <div class="postContents" style="width:50%;">
+                            日時<br><input id="postDate" type="date" style="width:95%;height: 2em;">
+                        </div>
+
+                        <div class="postContents" style="width:50%;">
+                            金額<br><input id="postAmount" type="number" value="0" min="0" step="1"
+                                style="width:95%;height: 2em;"><br>
+                        </div>
+
+                    </div>
+
+                    <div class="postRowContent">
+                        <div class="postContents" style="width:50%;">
+                            支払方法<br><select id="postPay" style="width:95%;height: 2em;"></select><br>
+                        </div>
+
+                        <div class="postContents" style="width:50%;">
+                            目的<br><select id="postPurpose" style="width:95%;height: 2em;"></select><br>
+                        </div>
+
+                    </div>
+
+                    <div class="postContents">
+                        内容<br><input type="text" id="postItem" style="width: 95%;height: 10em;"><br>
+                    </div>
+
+                    <div class="postContents">
+                        備考<br><input type="text" id="postNote" style="width: 95%;height: 5em;"><br>
+                    </div>
+                </div>
+
+                <div class="postContents" style="width:30%;     margin-left: 10px;">
+                    区分<br>
+                    <div id="postTag"></div><br>
+                    その他<br><input type="text" id="postTagElse"><br>
+                </div>
+
+            </div>
+
+            <div style="display: flex; justify-content: center;">
+                <button style="margin: 10px 0px 0px 0px;" onclick="fetchPost()">送信</button>
+            </div>
+        </div>
+
+        <div class="hide" id="SendPanel"></div>
+    </div>
+
     <main>
+        <button onclick="CreatePopUp(0)">Post</button>
         <button onclick="LogOut()">ログアウト</button>
-        <h1>
+        <h1 style=" text-align: center;">
             家計簿
         </h1>
 
-        <div id = "Search">
+        <div id="Search">
 
         </div>
 
-        <div id = "Records">
-            Key<input type= "text" id ="keyInput"/>
+        <div id="Records">
+            Key<input type="text" id="keyInput" />
             <button onclick="Submit()">取得</button>
         </div>
+
 
     </main>
 

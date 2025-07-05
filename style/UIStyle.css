@@ -1,0 +1,75 @@
+.calum {
+    padding: 5px 20px;
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+}
+
+.first {}
+
+.last {}
+
+
+.row0 {
+    background-color: #1c1d20;
+}
+
+.row1 {
+    background-color: #50515a;
+}
+
+.row2 {
+    background-color: rgb(55, 57, 65);
+}
+
+.hide {
+    display: none;
+}
+
+.popupBackground {
+    position: fixed;
+    background-color: #1c1d2080;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 10% 0px;
+}
+
+.PostData {
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 20px;
+    width: 600px;
+    border: 1.5px solid #585858;
+    border-radius: 10px;
+}
+
+.postContents {
+    background-color: #ffffff;
+    margin: 10px 0px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.postRowContent {
+    display: flex;
+    justify-content: start;
+}
+
+.editButton {
+    background-color: #302f2f;
+    border-radius: 20px;
+    width: 50px;
+    height: 30px;
+    border: 1.5px solid #cecece;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#postTag {
+    height: 70%;
+    overflow-y: scroll;
+    border: 1.5px solid #888585;
+    border-radius: 3px;
+    font-weight: normal;
+}
