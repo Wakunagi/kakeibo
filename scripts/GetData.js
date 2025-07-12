@@ -148,7 +148,7 @@ function CreateHtml(list) {
 
   html += `</table>`;
 
-  html = `<h3>合計:${sum}</h3>` + html;
+  html = `<div align="center"><h3>合計:${sum}</h3></div>` + html;
   htmlId.innerHTML = html;
 }
 
@@ -180,6 +180,7 @@ function CreateTag() {
 function CretateTagHtml() {
   const tagHtml = document.getElementById("Search");
   var html = ``;
+  html += `<div align="center">`;
   html += ` 期間<input type="date" id = "StartDate" onChange="ChangeDate('StartDate')"/>~`;
   html += ` 期間<input type="date" id = "EndDate" onChange="ChangeDate('EndDate')"/>まで`;
 
@@ -201,6 +202,7 @@ function CretateTagHtml() {
   }
   html += "</tr>";
   html += `</table>`;
+  html += `</div>`;
 
   tagHtml.innerHTML = html;
 }

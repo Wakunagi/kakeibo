@@ -56,14 +56,18 @@
     justify-content: start;
 }
 
-.editButton {
+button{
     background-color: #302f2f;
     border-radius: 20px;
-    width: 50px;
-    height: 30px;
     border: 1.5px solid #cecece;
     color: #ffffff;
     font-weight: bold;
+    padding: 5px 10px;
+}
+
+.editButton {
+    border-radius: 20px;
+    width: 50px;
 }
 
 #postTag {
