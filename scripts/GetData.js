@@ -148,7 +148,7 @@ function CreateHtml(list) {
 
   html += `</table>`;
 
-  html = `<div align="center"><h3>合計:${sum}</h3></div>` + html;
+  html = `<div align="center"><div class = "sumText">合計:${sum}</div></div>` + html;
   htmlId.innerHTML = html;
 }
 
@@ -181,8 +181,14 @@ function CretateTagHtml() {
   const tagHtml = document.getElementById("Search");
   var html = ``;
   html += `<div align="center">`;
-  html += ` 期間<input type="date" id = "StartDate" onChange="ChangeDate('StartDate')"/>~`;
-  html += ` 期間<input type="date" id = "EndDate" onChange="ChangeDate('EndDate')"/>まで`;
+
+  html += `<div class = "termText">`;
+  html += ` 開始<input type="date" id = "StartDate" class = "term" onChange="ChangeDate('StartDate')"/>`;
+  html += `</div>`;
+
+  html += `<div class = "termText">`;
+  html += ` 終了<input type="date" id = "EndDate" class = "term" onChange="ChangeDate('EndDate')"/>`;
+  html += `</div>`;
 
   html += `<table >`;
   html += "<tr>";
