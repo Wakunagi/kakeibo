@@ -11,8 +11,35 @@
 
 <body>
 
+    <main>
+        <div align="right">
+            <button onclick="LogOut()">ログアウト</button>
+        </div>
+
+        <h1 style=" text-align: center;">
+            家計簿
+        </h1>
+
+        <div id="Search">
+
+        </div>
+
+        <div align="right">
+            <button onclick="CreatePopUp(0)" style="margin-right: 5vw;">＋新規データを追加する</button>
+        </div>
+
+        <div id="Records">
+            Key<input type="text" id="keyInput" />
+            <button onclick="Submit()">取得</button>
+        </div>
+
+
+    </main>
+
     <div id="PopUpWindow" class="PopUpWindow hide">
 
+        <div id="TagSelect" class="TagSelect">
+        </div>
 
         <div id="PostData" class="PostData">
 
@@ -69,31 +96,6 @@
 
         <div class="hide" id="SendPanel"></div>
     </div>
-
-    <main>
-        <div align="right">
-            <button onclick="LogOut()">ログアウト</button>
-        </div>
-
-        <h1 style=" text-align: center;">
-            家計簿
-        </h1>
-
-        <div id="Search">
-
-        </div>
-
-        <div align="right">
-            <button onclick="CreatePopUp(0)" style="margin-right: 5vw;">＋新規データを追加する</button>
-        </div>
-
-        <div id="Records">
-            Key<input type="text" id="keyInput" />
-            <button onclick="Submit()">取得</button>
-        </div>
-
-
-    </main>
 
 
 </body>

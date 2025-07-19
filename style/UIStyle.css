@@ -88,8 +88,10 @@ button{
     border-radius: 10px;
     border: 1.5px solid #202020;
     font-weight: bold;
-    padding: 5px 50px;
     margin: 7px;
+    height: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .termText {
@@ -118,3 +120,11 @@ input[type="date"]{
   position: relative;
 }
 
+.TagSelect{
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 20px;
+    width: 200px;
+    border: 1.5px solid #585858;
+    border-radius: 10px;
+}

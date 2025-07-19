@@ -7,12 +7,10 @@ let postId = 0;
 let postTagList = [];
 let isPosted = false;
 
-function CreatePopUp(_id) {
-    if (popupDiaplay == null) popupDiaplay = document.getElementById("PopUpWindow");
+function CreatePopUp(_id) {    
+    popupDiaplay = SetPopupWindow(PopupWindowTagNumber.PostData);
     isPosted = false;
     postTagList = [];
-    popupDiaplay.className = dispClassName;
-
     postId = _id;
     const editData = List.find(x => x.id === _id);
 
@@ -84,8 +82,11 @@ function AddTag(_id, _value) {
 }
 
 async function HidePopUp() {
-    popupDiaplay.className = hideClassName;
-    if (isPosted) await loadingGSS(deproyKey);
+    PopupWindow.className = hideClassName;
+    if (isPosted) {
+        await loadingGSS(deproyKey);
+        isPosted = false;
+    }
 }
 
 

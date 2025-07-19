@@ -16,7 +16,11 @@ const titleNote = "note";
 const TITLE_LIST = [titleId, titleCreate, titleUpdate, titleDate, titleAmount, titlePay, titlePurpose, titleTag, titleItem, titleNote];
 const htmlTagTitleList = [titleTag, titlePurpose, titlePay];
 
-
+const PopupWindowTagNumber = {
+  PostData: 0,
+  TagSelect: 1,
+}
+const PopupWindowTag = [`PostData`, `TagSelect`];
 
 let List = [];
 let Tags = {};
@@ -30,6 +34,28 @@ let SearchDate = {};
 let first_html = "";
 
 let isGetLocalStrage = false;
+
+let PopupWindow = null;
+
+function SetPopupWindow(tag) {
+
+  PopupWindow = document.getElementById("PopUpWindow");
+  PopupWindow.className = `${dispClassName}`;
+
+  var tagElement = null;
+  for (var item of PopupWindowTag) {
+    var element = document.getElementById(item);
+    if (item == PopupWindowTag[tag]) {
+      element.className = element.id;
+      tagElement = element;
+    }
+    else {
+      element.className = hideClassName;
+    }
+  }
+
+  return tagElement;
+}
 
 //htmlファイルが読み込まれた時に呼ばれる
 window.onload = onLoad;
@@ -190,27 +216,30 @@ function CretateTagHtml() {
   html += ` 終了<input type="date" id = "EndDate" class = "term" onChange="ChangeDate('EndDate')"/>`;
   html += `</div>`;
 
-  html += `<table >`;
-  html += "<tr>";
   for (title of htmlTagTitleList) {
-    html += `<td valign="top">`;
-    html += `<details>`;
-
-    html += `  <summary>${title}</summary>`;
-
-    for (tag of Tags[title]) {
-      html += `<input type="checkbox" id="${title}-${tag}" name="${title}" onclick="ClickTag('${title}-${tag}','${title}','${tag}')"/>`;
-      html += `<label for="${tag}">${tag}</label><br>`;
-    }
-
-    html += `</details>`;
-    html += `</td>`;
+    html += `<button onclick="PopupSelectWindow('${title}')"/>${title}</button>`;
   }
-  html += "</tr>";
-  html += `</table>`;
+
   html += `</div>`;
 
   tagHtml.innerHTML = html;
+}
+
+function PopupSelectWindow(title) {
+
+  const tagSelectPanel = SetPopupWindow(PopupWindowTagNumber.TagSelect);
+
+  var html = ``;
+  html += `
+            <div style="display: flex; justify-content: flex-end;">
+                <button onclick="HidePopUp()">×</button>
+            </div>`;
+  for (tag of Tags[title]) {
+    var isCheck = Search[title].includes(tag)? "checked" : "";
+    html += `<input type="checkbox" id="${title}-${tag}" name="${title}" onclick="ClickTag('${title}-${tag}','${title}','${tag}')" ${isCheck}/>`;
+    html += `<label for="${title}-${tag}">${tag}</label><br>`;
+  }
+  tagSelectPanel.innerHTML = html;
 }
 
 function ClickTag(id, tagType, data) {
