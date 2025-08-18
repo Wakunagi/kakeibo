@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./scripts/GetData.js"></script>
-    <script src="./scripts/PostData.js"></script>
+    <script src="./scripts/Controller/LoginController.js"></script>
+    <script src="./scripts/Controller/MainViewController.js"></script>
+    <script src="./scripts/Controller/PopupViewController.js"></script>
+    <script src="./scripts/Controller/PostController.js"></script>
+    <script src="./scripts/Static/Consts.js"></script>
+    <script src="./scripts/Static/Utils.js"></script>
+    <script src="./scripts/View/MainView.js"></script>
+    <script src="./scripts/View/PopupView.js"></script>
+
     <link rel="stylesheet" href="./style/UIStyle.css">
 </head>
 
@@ -20,12 +27,16 @@
             家計簿
         </h1>
 
+        <div align="right">
+            <button onclick="PopupDataPostPanel(0)" style="margin-right: 5vw;">＋新規データを追加する</button>
+        </div>
+
         <div id="Search">
 
         </div>
 
-        <div align="right">
-            <button onclick="CreatePopUp(0)" style="margin-right: 5vw;">＋新規データを追加する</button>
+
+        <div align="right" id="SelectSortConst">
         </div>
 
         <div id="Records">
@@ -39,12 +50,14 @@
     <div id="PopUpWindow" class="PopUpWindow hide">
 
         <div id="TagSelect" class="TagSelect">
+            <button onclick="HidePopupWindow()" style="position: absolute; top:10px;right:10px;">×</button>
+            <div id="TagSelectBody"></div>
         </div>
 
         <div id="PostData" class="PostData">
 
             <div style="display: flex; justify-content: flex-end;">
-                <button onclick="HidePopUp()">×</button>
+                <button onclick="HidePopupWindow()">×</button>
             </div>
 
             <div class="postRowContent">
@@ -73,11 +86,11 @@
                     </div>
 
                     <div class="postContents">
-                        内容<br><input type="text" id="postItem" style="width: 95%;height: 10em;"><br>
+                        内容<br><textarea id="postItem" style="width: 95%;height: 10em;"></textarea><br>
                     </div>
 
                     <div class="postContents">
-                        備考<br><input type="text" id="postNote" style="width: 95%;height: 5em;"><br>
+                        備考<br><textarea id="postNote" style="width: 95%;height: 5em;"></textarea><br>
                     </div>
                 </div>
 

@@ -5,10 +5,6 @@
     color: #fff;
 }
 
-.first {}
-
-.last {}
-
 
 .row0 {
     background-color: #1c1d20;
@@ -121,10 +117,23 @@ input[type="date"]{
 }
 
 .TagSelect{
+    position: relative;
     background-color: #ffffff;
     margin: 0 auto;
     padding: 20px;
     width: 200px;
+    height: 400px;
     border: 1.5px solid #585858;
     border-radius: 10px;
+}
+
+
+
+.LikeButton{
+    background-color: #302f2f;
+    border-radius: 20px;
+    border: 1.5px solid #cecece;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
 }
