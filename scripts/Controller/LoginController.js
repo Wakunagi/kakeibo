@@ -86,10 +86,45 @@ function CreateTag() {
   }
 
   for (title of TitleList) {
+
+    // Tagの出現回数をまとめる
+    var tagCounts = [];
+    for (let tag of _tag[title]) {
+      var isContain = false;
+
+      for (let tagCount of tagCounts) {
+        if (tagCount.name == tag) {
+          tagCount.count++;
+          isContain = true;
+          break;
+        }
+      }
+
+      if (isContain) {
+        continue;
+      }
+
+      tagCounts.push(new TagCountData(tag, 1));
+    }
+
     _tags[title] = Array.from(new Set(_tag[title]));
+    _tags[title].sort((a, b) => GetCountInTagCountDataList(tagCounts, b) - GetCountInTagCountDataList(tagCounts, a));
   }
 
   for (title of HtmlTagTitleList) {
     _search[title] = [];
   }
+}
+function GetCountInTagCountDataList(list, name) {
+  for (let count of list) {
+    if (count.name == name) {
+      return count.count;
+    }
+  }
+  return -1;
+}
+
+function TagCountData(name, count) {
+  this.name = name;
+  this.count = count;
 }
