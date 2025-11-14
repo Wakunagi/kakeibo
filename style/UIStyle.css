@@ -67,7 +67,7 @@ button{
 }
 
 #postTag {
-    height: 70%;
+    height: 320px;
     overflow-y: scroll;
     border: 1.5px solid #888585;
     border-radius: 3px;
