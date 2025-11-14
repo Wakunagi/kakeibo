@@ -15,7 +15,7 @@ function PopupSelectPanel(title) {
 }
 
 
-function PopupDataPostPanel(id) {
+function PopupDataPostPanel(id, backData = undefined) {
     DisplayPopupWindow(PopupPanelTags.PostData);
     isPosted = false;
     postTagList = [];
@@ -29,6 +29,7 @@ function PopupDataPostPanel(id) {
 
         var selected = "";
         if (editData != undefined) selected = editData[TitlePay] == item ? "selected" : "";
+        if (selected == "" && backData != undefined && backData[TitlePay] == item) selected = "selected";
         html += `<option value="${item}" ${selected}>${item}</option>`;
     }
     postPay.innerHTML = html;
@@ -40,6 +41,7 @@ function PopupDataPostPanel(id) {
 
         var selected = "";
         if (editData != undefined) selected = editData[TitlePurpose] == item ? "selected" : "";
+        if (selected == "" && backData != undefined && backData[TitlePurpose] == item) selected = "selected";
         html += `<option value="${item}" ${selected}>${item}</option>`;
     }
     postPurpose.innerHTML = html;

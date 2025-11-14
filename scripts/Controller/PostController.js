@@ -68,7 +68,12 @@ async function fetchPost() {
     sendPanel.className = HideClassName;
 
     const _postDate = `${postDate.value}`;
-    PopupDataPostPanel(0);
+
+    var backData = {};
+    backData[TitlePay] = postPay;
+    backData[TitlePurpose] = postPurpose;
+
+    PopupDataPostPanel(0, backData);
     isPosted = true;
     postDate.value = _postDate;
 }
