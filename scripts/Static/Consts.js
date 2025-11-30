@@ -31,3 +31,21 @@ const SortData = {
 
 const HideClassName = "hide";
 const DispClassName = "popupBackground";
+
+const TitleText = [
+  new TitleKeyValue(TitleId,"ID"),
+  new TitleKeyValue(TitleCreate,"作成日"),
+  new TitleKeyValue(TitleUpdate,"更新日"),
+  new TitleKeyValue(TitleDate,"日付"),
+  new TitleKeyValue(TitleAmount,"金額"),
+  new TitleKeyValue(TitlePurpose,"区分"),
+  new TitleKeyValue(TitleTag,"タグ"),
+  new TitleKeyValue(TitlePay,"支払方法"),
+  new TitleKeyValue(TitleItem,"内容"),
+  new TitleKeyValue(TitleNote,"備考"),
+];
+
+function TitleKeyValue(key, value) {
+  this.key = key;
+  this.value = value;
+}

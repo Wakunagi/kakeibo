@@ -35,7 +35,7 @@ function CreateHtml(list) {
     for (title of TitleList) {
         if (IsIgnorTitle(title)) continue;
 
-        html += `<th class="calum row${0}">${title}</th>`;
+        html += `<th class="calum row${0}">${GetTitleText(title)}</th>`;
     }
     html += "</tr>";
 
@@ -92,7 +92,7 @@ function CretateTagHtml() {
 
     // タグ検索部分を作成
     for (title of HtmlTagTitleList) {
-        html += `<button onclick="PopupSelectPanel('${title}')"/>${title}</button>`;
+        html += `<button onclick="PopupSelectPanel('${title}')"/>${GetTitleText(title)}</button>`;
     }
 
     html += `</div>`;

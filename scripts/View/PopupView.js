@@ -5,12 +5,14 @@ function PopupSelectPanel(title) {
     const tagSelectPanel = document.getElementById("TagSelectBody");
 
     var html = ``;
-    html += `<div style="text-align:center">${title}</div>`;
+    html += `<h3 style="text-align:center">${GetTitleText(title)}</h3>`;
+    html += `<div class = "TagSelectBody">`;
     for (tag of _tags[title]) {
         var isCheck = _search[title].includes(tag) ? "checked" : "";
         html += `<input type="checkbox" id="${title}-${tag}" name="${title}" onclick="OnClickSearchTagButton('${title}-${tag}','${title}','${tag}')" ${isCheck}/>`;
         html += `<label for="${title}-${tag}">${tag}</label><br>`;
     }
+    html += `</div>`;
     tagSelectPanel.innerHTML = html;
 }
 

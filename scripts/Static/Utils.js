@@ -24,5 +24,15 @@ function IsIgnorTitle(title) {
 }
 
 function GetSortOrderText(order) {
-  return order.IsAscending ? `${order.Title}（昇順）` : `${order.Title}（降順）`;
+  return `${GetTitleText(order.Title)}${order.IsAscending ? `（昇順）` : `（降順）`}`;
+}
+
+function GetTitleText(key){
+  for(var item of TitleText){
+    if(item.key == key){
+      return item.value;
+    }
+  }
+
+  return key;
 }

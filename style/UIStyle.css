@@ -122,11 +122,15 @@ input[type="date"]{
     margin: 0 auto;
     padding: 20px;
     width: 200px;
-    height: 400px;
     border: 1.5px solid #585858;
     border-radius: 10px;
 }
 
+.TagSelectBody{    
+    height: 400px;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
 
 
 .LikeButton{
@@ -136,4 +140,9 @@ input[type="date"]{
     color: #ffffff;
     font-weight: bold;
     padding: 5px 10px;
+}
+
+body{
+    font-family:sans-serif;
+    font-weight: bold;
 }
