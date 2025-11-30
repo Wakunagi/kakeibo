@@ -126,10 +126,10 @@ input[type="date"]{
     border-radius: 10px;
 }
 
-.TagSelectBody{    
+.TagSelectBodyScroll{    
     height: 400px;
     margin-top: 10px;
-    overflow-y: scroll;
+    overflow-y: scroll,clip;
 }
 
 

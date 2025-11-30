@@ -6,11 +6,11 @@ function PopupSelectPanel(title) {
 
     var html = ``;
     html += `<h3 style="text-align:center">${GetTitleText(title)}</h3>`;
-    html += `<div class = "TagSelectBody">`;
+    html += `<div class = "TagSelectBodyScroll">`;
     for (tag of _tags[title]) {
         var isCheck = _search[title].includes(tag) ? "checked" : "";
-        html += `<input type="checkbox" id="${title}-${tag}" name="${title}" onclick="OnClickSearchTagButton('${title}-${tag}','${title}','${tag}')" ${isCheck}/>`;
-        html += `<label for="${title}-${tag}">${tag}</label><br>`;
+        html += `<input type="checkbox" id="SelectTag-${title}-${tag}" name="${title}" onclick="OnClickSearchTagButton('SelectTag-${title}-${tag}','${title}','${tag}')" ${isCheck}/>`;
+        html += `<label for="SelectTag-${title}-${tag}">${tag}</label><br>`;
     }
     html += `</div>`;
     tagSelectPanel.innerHTML = html;
@@ -60,8 +60,8 @@ function PopupDataPostPanel(id, backData = undefined) {
                 postTagList.push(item);
             }
         }
-        html += `<input type="checkbox" id="${TitleTag}-${item}" onchange="AddPostTag('${TitleTag}-${item}','${item}')" ${selected}/>`;
-        html += `<label for="${TitleTag}-${item}">${item}</label><br>`;
+        html += `<input type="checkbox" id="PostTag-${TitleTag}-${item}" onchange="AddPostTag('PostTag-${TitleTag}-${item}','${item}')" ${selected}/>`;
+        html += `<label for="PostTag-${TitleTag}-${item}">${item}</label><br>`;
     }
     postTag.innerHTML = html;
 
