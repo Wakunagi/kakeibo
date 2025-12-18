@@ -52,7 +52,7 @@
     justify-content: start;
 }
 
-button{
+button {
     background-color: #302f2f;
     border-radius: 20px;
     border: 1.5px solid #cecece;
@@ -74,13 +74,13 @@ button{
     font-weight: normal;
 }
 
-.sumText{
+.sumText {
     font-size: xx-large;
     font-weight: bold;
     margin: 20px;
 }
 
-.term{
+.term {
     border-radius: 10px;
     border: 1.5px solid #202020;
     font-weight: bold;
@@ -96,27 +96,27 @@ button{
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
 }
 
 
-input[type="date"]::-webkit-inner-spin-button{
-  -webkit-appearance: none;
+input[type="date"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
-input[type="date"]::-webkit-clear-button{
-  -webkit-appearance: none;
+input[type="date"]::-webkit-clear-button {
+    -webkit-appearance: none;
 }
 
-input[type="date"]{
- 
-  position: relative;
+input[type="date"] {
+
+    position: relative;
 }
 
-.TagSelect{
+.TagSelect {
     position: relative;
     background-color: #ffffff;
     margin: 0 auto;
@@ -126,14 +126,14 @@ input[type="date"]{
     border-radius: 10px;
 }
 
-.TagSelectBodyScroll{    
+.TagSelectBodyScroll {
     height: 400px;
     margin-top: 10px;
-    overflow-y: scroll,clip;
+    overflow-y: scroll;
 }
 
 
-.LikeButton{
+.LikeButton {
     background-color: #302f2f;
     border-radius: 20px;
     border: 1.5px solid #cecece;
@@ -142,7 +142,7 @@ input[type="date"]{
     padding: 5px 10px;
 }
 
-body{
-    font-family:sans-serif;
+body {
+    font-family: sans-serif;
     font-weight: bold;
 }
