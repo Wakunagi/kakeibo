@@ -49,3 +49,5 @@ function TitleKeyValue(key, value) {
   this.key = key;
   this.value = value;
 }
+
+const MonthCount = 12;

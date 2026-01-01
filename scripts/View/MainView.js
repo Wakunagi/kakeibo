@@ -21,6 +21,8 @@ function CreateConstHtml() {
 // 表部分の作成
 function CreateHtml(list) {
 
+    CreateGraph(Sort(list,SortData.DateAscending,true));
+
     list = SortInData(list, _sortOrder);
 
     var sum = 0;
