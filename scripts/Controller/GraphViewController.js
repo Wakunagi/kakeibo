@@ -34,7 +34,7 @@ function CreateGraph(list) {
     }
 
     amountGraph = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: yearMonthLabels,
             datasets: [
@@ -42,7 +42,7 @@ function CreateGraph(list) {
                     label: '月の使用金額',
                     data: monthAmountSumList,
                     borderColor: "rgba(48, 45, 55, 1)",
-                    backgroundColor: "rgba(0,0,0,0)"
+                    backgroundColor: "rgba(117, 115, 126, 1)"
                 },
             ],
         },
