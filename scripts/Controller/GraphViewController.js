@@ -13,7 +13,7 @@ function CreateGraph(list) {
             continue;
         }
 
-        monthAmountList[date.getMonth()-1].push(item.amount);
+        monthAmountList[(date.getMonth() - 1 + MonthCount) % MonthCount].push(item.amount);
     }
 
     var monthAmountSumList = [];
@@ -28,7 +28,7 @@ function CreateGraph(list) {
     }
 
     var ctx = document.getElementById("myLineChart");
-    if(amountGraph != undefined){
+    if (amountGraph != undefined) {
         amountGraph.destroy();
         console.log("Destroy!");
     }
@@ -73,7 +73,7 @@ function IsInOneYear(date) {
 
     var diff = nowYear - year;
     var deltaMonth = nowMonth + (diff * MonthCount);
-    return month >= deltaMonth - MonthCount ;
+    return month >= deltaMonth - MonthCount;
 }
 
 function GetSum(list) {
