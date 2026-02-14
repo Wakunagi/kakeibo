@@ -1,19 +1,23 @@
 let amountGraph;
 
 function CreateGraph(list) {
+
+    // 12ヶ月分のデータを入れる配列
     var monthAmountList = [];
     for (var i = 0; i < MonthCount; i++) {
         monthAmountList.push([]);
     }
 
+    // 1年以内のデータを注入
     for (var item of list) {
-        var date = new Date(item.date);
+        var date = GetDate(item.date, '/');
 
         if (!IsInOneYear(date)) {
             continue;
         }
-
-        monthAmountList[(date.getMonth() - 1 + MonthCount) % MonthCount].push(item.amount);
+        var nowMonth = (new Date().getMonth()) + 1;
+        var index = (GetMonth(date) - 1 - nowMonth + MonthCount) % MonthCount;
+        monthAmountList[index].push(item.amount);
     }
 
     var monthAmountSumList = [];
@@ -60,12 +64,12 @@ function CreateGraph(list) {
 }
 
 function IsInOneYear(date) {
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
+    var year = GetYear(date);
+    var month = GetMonth(date);
 
     var now = new Date();
     var nowYear = now.getFullYear();
-    var nowMonth = now.getMonth();
+    var nowMonth = now.getMonth() + 1;
 
     if (year == nowYear) {
         return true;
@@ -74,6 +78,16 @@ function IsInOneYear(date) {
     var diff = nowYear - year;
     var deltaMonth = nowMonth + (diff * MonthCount);
     return month >= deltaMonth - MonthCount;
+}
+
+function GetMonth(date) {
+    // YYYY/MM/DD 形式
+    return date.substring(5, 7);
+}
+
+function GetYear(date) {
+    // YYYY/MM/DD 形式
+    return date.substring(0, 4);
 }
 
 function GetSum(list) {
