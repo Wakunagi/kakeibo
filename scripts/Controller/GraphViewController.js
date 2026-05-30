@@ -77,7 +77,7 @@ function IsInOneYear(date) {
 
     var diff = nowYear - year;
     var deltaMonth = nowMonth + (diff * MonthCount);
-    return month >= deltaMonth - MonthCount;
+    return month > deltaMonth - MonthCount;
 }
 
 function GetMonth(date) {
